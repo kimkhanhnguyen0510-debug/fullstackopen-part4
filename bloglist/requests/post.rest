@@ -1,9 +1,51 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthaXptZSIsImlkIjoiNmFmMjhlNWVlYzM0ZGE1YjQ0ZDY0MmExIiwiaWF0IjoxNzk0MjgxMjQ3LCJleHAiOjE3OTQyODQ4NDd9.ZpN_Y4dpIlXiW2cztJXa7pKocXiyoe7xDzJ5Lg7jZWY
 
 {
-  "title": "My first blog",
+  "title": "Test with middleware",
   "author": "Khanh",
   "url": "https://example.com",
-  "likes": 5
+  "likes": 15
 }
+
+### Create a blog without token
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+{
+  "title": "Test without token",
+  "author": "Thanh",
+  "url": "https://example.com",
+  "likes": 15
+}
+
+
+### Create a user
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+  "username": "kaizme",
+  "name": "Khanh",
+  "password": "12324234"
+}
+
+### Login
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+  "username": "kaizme",
+  "password": "12324234"
+}
+
+### See blog list
+GET http://localhost:3003/api/blogs
+
+### See user list
+GET http://localhost:3003/api/users
+
+### Delete a blog
+DELETE http://localhost:3003/api/blogs/6af2968c2d24554ae34bace2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImthaXptZSIsImlkIjoiNmFmMjhlNWVlYzM0ZGE1YjQ0ZDY0MmExIiwiaWF0IjoxNzk0Mjg4MzE2LCJleHAiOjE3OTQyOTE5MTZ9.nS-9KA1QKiyJLIwvK_czlY8OsmkAjG927C5dh_lww-I
+
